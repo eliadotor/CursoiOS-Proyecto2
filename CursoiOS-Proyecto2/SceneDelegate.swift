@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
 
+        // Para inicir el primer viewController
         window.rootViewController = InitialControllerBuilder().build()
         
         self.window = window
