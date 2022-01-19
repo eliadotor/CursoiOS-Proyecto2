@@ -13,7 +13,10 @@ class InitialControllerBuilder {
         let viewController = ListControllerBuilder().build()
         // Cuando creamos un navigationController hay que decirle el viewController que se le va a pasar
         let navigationController = UINavigationController(rootViewController: viewController)
-        
-        return navigationController
+        navigationController.tabBarItem = UITabBarItem(title: "List", image: UIImage.init(systemName: "list.bullet"), tag: 0)
+
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([navigationController], animated: true)
+        return tabBarController
     }
 }

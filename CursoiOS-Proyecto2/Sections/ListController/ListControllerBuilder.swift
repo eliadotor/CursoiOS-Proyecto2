@@ -15,6 +15,7 @@ class ListControllerBuilder {
         // inyeccion de dependencias
         viewController.fetchLandmarks = FetchLandmarksFromDisk()
         viewController.detailBuilder = DetailControllerBuilder()
+        
         return viewController
     }
         
