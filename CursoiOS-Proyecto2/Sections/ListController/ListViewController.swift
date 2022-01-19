@@ -21,6 +21,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         fetchData()
         
     }
@@ -44,6 +45,13 @@ class ListViewController: UIViewController {
     }
     
 
+}
+
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = DetailViewController.create()
+        navigationController?.pushViewController(detailController, animated: true)
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
