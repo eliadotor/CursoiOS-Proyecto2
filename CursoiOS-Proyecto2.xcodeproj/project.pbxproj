@@ -16,6 +16,7 @@
 		456B44AF27988AFF004A15B5 /* CollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456B44AE27988AFF004A15B5 /* CollectionViewController.storyboard */; };
 		456B44B127988B0F004A15B5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44B027988B0F004A15B5 /* CollectionViewController.swift */; };
 		456B44B327988B98004A15B5 /* CollectionControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44B227988B98004A15B5 /* CollectionControllerBuilder.swift */; };
+		456B44B527989722004A15B5 /* CollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44B427989722004A15B5 /* CollectionCollectionViewCell.swift */; };
 		D786BCEC2798278F004619AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786BCEB2798278F004619AD /* AppDelegate.swift */; };
 		D786BCEE2798278F004619AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786BCED2798278F004619AD /* SceneDelegate.swift */; };
 		D786BCF527982793004619AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D786BCF427982793004619AD /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		456B44AE27988AFF004A15B5 /* CollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionViewController.storyboard; sourceTree = "<group>"; };
 		456B44B027988B0F004A15B5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		456B44B227988B98004A15B5 /* CollectionControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionControllerBuilder.swift; sourceTree = "<group>"; };
+		456B44B427989722004A15B5 /* CollectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		D786BCE82798278F004619AD /* CursoiOS-Proyecto2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CursoiOS-Proyecto2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D786BCEB2798278F004619AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D786BCED2798278F004619AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				456B44AE27988AFF004A15B5 /* CollectionViewController.storyboard */,
 				456B44B027988B0F004A15B5 /* CollectionViewController.swift */,
 				456B44B227988B98004A15B5 /* CollectionControllerBuilder.swift */,
+				456B44B427989722004A15B5 /* CollectionCollectionViewCell.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D786BCEC2798278F004619AD /* AppDelegate.swift in Sources */,
 				456B44A327986A24004A15B5 /* ListControllerBuilder.swift in Sources */,
 				456B44A1279864CD004A15B5 /* ListViewController.swift in Sources */,
+				456B44B527989722004A15B5 /* CollectionCollectionViewCell.swift in Sources */,
 				456B44B127988B0F004A15B5 /* CollectionViewController.swift in Sources */,
 				456B44B327988B98004A15B5 /* CollectionControllerBuilder.swift in Sources */,
 				456B44AC279875C7004A15B5 /* DetailControllerBuilder.swift in Sources */,
