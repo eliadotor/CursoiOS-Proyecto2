@@ -10,13 +10,34 @@ import UIKit
 
 class InitialControllerBuilder {
     func build() -> UIViewController {
-        let viewController = ListControllerBuilder().build()
-        // Cuando creamos un navigationController hay que decirle el viewController que se le va a pasar
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem = UITabBarItem(title: "List", image: UIImage.init(systemName: "list.bullet"), tag: 0)
-
+        
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([navigationController], animated: true)
+        /*let listViewcontroller = buildList()
+        let collectioncontroller = buildCollection()
+        let viewControllers = [listViewcontroller, collectioncontroller]*/
+        let viewControllers = [buildList(), buildCollection()]
+        tabBarController.setViewControllers(viewControllers, animated: false)
         return tabBarController
+    }
+}
+
+
+private extension InitialControllerBuilder {
+    func buildList() -> UINavigationController {
+        let viewController = ListControllerBuilder().build()
+        let tabBarItem = UITabBarItem(title: "List", image: UIImage.init(systemName: "list.bullet"), tag: 0)
+        return buildNavigation(with: viewController, tabBarItem: tabBarItem)
+    }
+    
+    func buildCollection() -> UINavigationController {
+        let viewController = CollectionControllerBuilder().build()
+        let tabBarItem = UITabBarItem(title: "Collection", image: UIImage.init(systemName: "pencil"), tag: 1)
+        return buildNavigation(with: viewController, tabBarItem: tabBarItem)
+    }
+    
+    func buildNavigation(with viewController: UIViewController, tabBarItem: UITabBarItem) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem = tabBarItem
+        return navigationController
     }
 }
