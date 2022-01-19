@@ -13,6 +13,7 @@ class ListViewController: UIViewController {
     
     // Dependencia
     var fetchLandmarks: FetchLandmarksUseCase?
+    var detailBuilder: DetailControllerBuilder?
     
     static func createFromStoryBoard() -> ListViewController {
         return UIStoryboard(name: "ListViewController", bundle: .main).instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
@@ -49,7 +50,12 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailController = DetailViewController.create()
+        let landmark = landmarks[indexPath.row]
+        guard let detailController = detailBuilder?.build(viewModel: landmark.toDetailViewModel) else {
+            return
+        }
+        
+        //let viewController = DetailControllerBuilder().build(viewModel: landmark.toDetailViewModel)
         navigationController?.pushViewController(detailController, animated: true)
     }
 }

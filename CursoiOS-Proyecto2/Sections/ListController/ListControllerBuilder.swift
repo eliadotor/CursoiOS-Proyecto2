@@ -14,6 +14,7 @@ class ListControllerBuilder {
         let viewController = ListViewController.createFromStoryBoard()
         // inyeccion de dependencias
         viewController.fetchLandmarks = FetchLandmarksFromDisk()
+        viewController.detailBuilder = DetailControllerBuilder()
         return viewController
     }
         
