@@ -37,6 +37,7 @@ class ListViewController: UIViewController {
         }
     }
     
+    private var favorites = [String]()
     
     private func fetchData(){
         fetchCats?.fetchCats(completion: { cats in
@@ -67,12 +68,29 @@ extension ListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         let cat = cats[indexPath.row]
         
+        cell.delegate = self
+        cell.isFavorite = favorites.contains(cat.id)
         cell.configure(viewModel: cat.toListCellViewModel)
         /*if let url = cat.imageUrl, let data = try? Data(contentsOf: url) {
             cell.imageView?.image = UIImage(data: data)
         }*/
         
         return cell
+    }
+}
+
+
+extension ListViewController: ListTableViewDelegate {
+    func didPressInFavorite(cell: ListTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {return}
+        cell.isFavorite = !cell.isFavorite
+        //cell.isFavorite.toggle()
+        let cat = cats[indexPath.row]
+        if cell.isFavorite {
+            favorites.append(cat.id)
+        } else if let index = favorites.firstIndex(of: cat.id){
+            favorites.remove(at: index)
+        }
     }
 }
 /*
