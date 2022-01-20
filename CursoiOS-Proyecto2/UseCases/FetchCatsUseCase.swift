@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol FetchCatsUseCase {
     func fetchCats(completion: @escaping ([Cat]) -> Void)
@@ -19,6 +20,14 @@ class FetchCatsFromApi: FetchCatsUseCase {
         }
         
         let request = URLRequest(url: url)
+        
+        AF.request(request).responseDecodable { (response: DataResponse<[Cat], AFError>) in
+            switch response.result {
+            case.success(let cats): completion(cats)
+            case.failure: completion([])
+            }
+        }.validate() // Para validar
+        /* Equivalente -^
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 completion([])
@@ -36,6 +45,7 @@ class FetchCatsFromApi: FetchCatsUseCase {
             }
         }.resume()
         // task.resume()
+         */
     }
     
 }
