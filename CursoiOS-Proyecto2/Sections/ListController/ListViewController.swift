@@ -11,8 +11,9 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var fetchCats : FetchCatsUseCase?
     // Dependencia
-    var fetchLandmarks: FetchLandmarksUseCase?
+    //var fetchLandmarks: FetchLandmarksUseCase?
     var detailBuilder: DetailControllerBuilder?
     
     static func createFromStoryBoard() -> ListViewController {
@@ -27,21 +28,18 @@ class ListViewController: UIViewController {
         
     }
     
-    private var landmarks = [Landmark]() {
-        // Para que recargue los datos cada vez que haya un cambio
+    private var cats = [Cat]() {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
+    
     private func fetchData(){
-        fetchLandmarks?.fetchLandmarks({result  in
-            switch result {
-            case.success(let landmarks):
-                self.landmarks = landmarks
-                // Si los datos tardan en llegar self.tableView.reloadData()
-            case.failure: break
-            }
+        fetchCats?.fetchCats(completion: { cats in
+            self.cats = cats
         })
     }
     
@@ -50,24 +48,30 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let landmark = landmarks[indexPath.row]
-        guard let detailController = detailBuilder?.build(viewModel: landmark.toDetailViewModel) else {
+        /*let cat = landmarks[indexPath.row]
+        guard let detailController = detailBuilder?.build(viewModel: cat.toDetailViewModel) else {
             return
         }
         
         //let viewController = DetailControllerBuilder().build(viewModel: landmark.toDetailViewModel)
-        navigationController?.pushViewController(detailController, animated: true)
+        navigationController?.pushViewController(detailController, animated: true)*/
     }
 }
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return landmarks.count
+        return cats.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-        let landmark = landmarks[indexPath.row]
-        cell.textLabel?.text = landmark.name
+        let cat = cats[indexPath.row]
+        
+        cell.textLabel?.text = cat.tagText
+        
+        if let url = cat.imageUrl, let data = try? Data(contentsOf: url) {
+            cell.imageView?.image = UIImage(data: data)
+        }
+        
         return cell
     }
 }

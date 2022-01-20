@@ -13,7 +13,8 @@ class ListControllerBuilder {
     func build()-> UIViewController {
         let viewController = ListViewController.createFromStoryBoard()
         // inyeccion de dependencias
-        viewController.fetchLandmarks = FetchLandmarksFromDisk()
+        //viewController.fetchLandmarks = FetchLandmarksFromDisk()
+        viewController.fetchCats = FetchCatsFromApi()
         viewController.detailBuilder = DetailControllerBuilder()
         
         return viewController
