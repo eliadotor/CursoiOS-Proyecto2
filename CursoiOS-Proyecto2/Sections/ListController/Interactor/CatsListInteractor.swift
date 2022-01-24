@@ -9,9 +9,26 @@ import Foundation
 import Alamofire
 
 class CatsListInteractor: ListInteractorContrac {
+    
+    private static var favoritesKey = "favorite.cats.array"
+    
     var output: ListInteractorOutputContrac?
     
-    private var favorites = [String]()
+    private let userDefaults: UserDefaults
+    
+    init(userDefaults: UserDefaults = UserDefaults.standard) {
+        self.userDefaults = userDefaults
+    }
+    
+    private var favorites: [String] {
+        get {
+            userDefaults.stringArray(forKey: CatsListInteractor.favoritesKey) ?? []
+        }
+        
+        set {
+            userDefaults.setValue(newValue, forKey: CatsListInteractor.favoritesKey)
+        }
+    }
     
     func fetchItems() {
         guard let url = URL(string: "https://cataas.com/api/cats") else {
@@ -29,7 +46,6 @@ class CatsListInteractor: ListInteractorContrac {
         }.validate() // Para validar
     }
     
-    
     func didPressFavorite(in cat: Cat) {
         if !favorites.contains(cat.id) {
             favorites.append(cat.id)
@@ -44,5 +60,4 @@ class CatsListInteractor: ListInteractorContrac {
     func isFavorite(cat: Cat) -> Bool {
         return favorites.contains(cat.id)
     }
-    
 }
