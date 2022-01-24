@@ -13,10 +13,13 @@ class ListControllerBuilder {
     func build()-> UIViewController {
         let viewController = ListViewController.createFromStoryBoard()
         let presenter = CatsListPresenter()
-        let fetchCats = FetchCatsFromApi()
+        let interactor = CatsListInteractor()
+        let wireframe = CatsListWireframe()
         viewController.presenter = presenter
         presenter.view = viewController
-        presenter.fetchCats = fetchCats
+        presenter.interactor = interactor
+        presenter.wireframe = wireframe
+        wireframe.view = viewController
         return viewController
     }
         

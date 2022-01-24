@@ -19,6 +19,7 @@ protocol ListViewContract: UIViewController {
 
 protocol ListPresenterContract: AnyObject {
     var view: ListViewController? {set get}
+    var interactor: ListInteractorContrac? {set get}
     
     var numItems: Int {get}
     
@@ -28,4 +29,21 @@ protocol ListPresenterContract: AnyObject {
     func isFavorite(at indexPath: IndexPath) -> Bool
     func didSelectFavorite(at indexPath: IndexPath)
     func didSelectItem(at indexPath: IndexPath)
+}
+
+protocol ListInteractorContrac {
+    var output: ListInteractorOutputContrac? {get set}
+    func fetchItems()
+}
+
+
+protocol ListInteractorOutputContrac {
+    func didFetch(cats: [Cat])
+    func fetchDidFail()
+}
+
+
+protocol CatListWireframeContract {
+    var view: UIViewController? {get set}
+    func navigate(to cat: Cat)
 }

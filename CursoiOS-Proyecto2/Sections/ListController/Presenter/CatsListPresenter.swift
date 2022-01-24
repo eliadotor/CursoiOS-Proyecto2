@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
 
-class CatsListPresenter: ListPresenterContract {
-
-    var fetchCats : FetchCatsUseCase?
+class CatsListPresenter: ListPresenterContract {    
 
     var view: ListViewController?
+    
+    var interactor: ListInteractorContrac?
+    
+    var wireframe: CatListWireframeContract?
     
     private var cats = [Cat]() {
         didSet {
@@ -27,6 +30,7 @@ class CatsListPresenter: ListPresenterContract {
     }
     
     func viewDidLoad() {
+        interactor?.output = self
         fetchData()
     }
     
@@ -53,17 +57,23 @@ class CatsListPresenter: ListPresenterContract {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        let item = cats[indexPath.row]
-        let viewController = DetailControllerBuilder().build(viewModel: item.toDetailViewModel)
-        view?.navigationController?.pushViewController(viewController, animated: true)
+        let cat = cats[indexPath.row]
+        wireframe?.navigate(to: cat)
     }
-
     
     private func fetchData(){
-        fetchCats?.fetchCats(completion: { cats in
-            self.cats = cats
-        })
+        interactor?.fetchItems()
+    }
+
+}
+
+
+extension CatsListPresenter: ListInteractorOutputContrac {
+    func didFetch(cats: [Cat]) {
+        self.cats = cats
     }
     
-
+    func fetchDidFail() {
+        print("Error")
+    }
 }
