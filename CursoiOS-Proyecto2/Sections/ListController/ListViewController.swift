@@ -50,13 +50,13 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let cat = landmarks[indexPath.row]
+        let cat = cats[indexPath.row]
         guard let detailController = detailBuilder?.build(viewModel: cat.toDetailViewModel) else {
             return
         }
         
         //let viewController = DetailControllerBuilder().build(viewModel: landmark.toDetailViewModel)
-        navigationController?.pushViewController(detailController, animated: true)*/
+        navigationController?.pushViewController(detailController, animated: true)
     }
 }
 

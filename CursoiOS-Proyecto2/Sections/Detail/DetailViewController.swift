@@ -9,13 +9,14 @@ import UIKit
 
 struct DetailViewModel {
     let name: String
-    let image: UIImage?
+    let imageUrl: URL?
 }
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
+    
     static func create() -> DetailViewController {
         return DetailViewController(nibName: "DetailViewController", bundle: .main)
     }
@@ -30,7 +31,7 @@ class DetailViewController: UIViewController {
     
     func configure(width viewModel: DetailViewModel?) {
         guard let viewModel = viewModel else { return }
-        detailImage.image = viewModel.image
+        detailImage.kf.setImage(with: viewModel.imageUrl)
         nameLabel.text = viewModel.name
     }
 

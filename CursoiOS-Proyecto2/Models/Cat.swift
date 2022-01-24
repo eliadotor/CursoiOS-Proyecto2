@@ -27,4 +27,8 @@ extension Cat {
     var toListCellViewModel: ListTableCellViewModel {
         return ListTableCellViewModel(imageUrl: imageUrl, text: tagText)
     }
+    
+    var toDetailViewModel: DetailViewModel {
+        return DetailViewModel(name: tagText, imageUrl: imageUrl)
+    }
 }
