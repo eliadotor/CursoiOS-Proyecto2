@@ -16,7 +16,6 @@ protocol ListViewContract: UIViewController {
     func setFavorite(_ favorite: Bool, at indexPath: IndexPath)
 }
 
-
 protocol ListPresenterContract: AnyObject {
     var view: ListViewController? {set get}
     var interactor: ListInteractorContrac? {set get}
@@ -34,14 +33,15 @@ protocol ListPresenterContract: AnyObject {
 protocol ListInteractorContrac {
     var output: ListInteractorOutputContrac? {get set}
     func fetchItems()
+    func didPressFavorite(in cat: Cat)
+    func isFavorite(cat: Cat) -> Bool
 }
-
 
 protocol ListInteractorOutputContrac {
     func didFetch(cats: [Cat])
     func fetchDidFail()
+    func didUpdateFavorites(in cat: Cat, favorite: Bool)
 }
-
 
 protocol CatListWireframeContract {
     var view: UIViewController? {get set}

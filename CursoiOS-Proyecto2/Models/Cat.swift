@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
 
-struct Cat: Decodable {
+struct Cat: Decodable, Equatable {
     let id: String
     let created_at: String
     let tags: [String]
+    
 }
 
 extension Cat {
