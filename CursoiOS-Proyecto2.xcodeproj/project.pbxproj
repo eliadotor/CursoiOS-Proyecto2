@@ -21,6 +21,8 @@
 		456B44B127988B0F004A15B5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44B027988B0F004A15B5 /* CollectionViewController.swift */; };
 		456B44B327988B98004A15B5 /* CollectionControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44B227988B98004A15B5 /* CollectionControllerBuilder.swift */; };
 		456B44B527989722004A15B5 /* CollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44B427989722004A15B5 /* CollectionCollectionViewCell.swift */; };
+		45771B11279F035400EF2FCF /* ListViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771B10279F035400EF2FCF /* ListViewContract.swift */; };
+		45771B13279F048B00EF2FCF /* CatsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771B12279F048B00EF2FCF /* CatsListPresenter.swift */; };
 		4A80F5C5B32416B3AC33509A /* Pods_CursoiOS_Proyecto2_CursoiOS_Proyecto2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C321E8C5F02F48E5A9D07054 /* Pods_CursoiOS_Proyecto2_CursoiOS_Proyecto2UITests.framework */; };
 		89656A158BEB54E4C8B64E66 /* Pods_CursoiOS_Proyecto2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECEBAD0D04B22085C34E2AC /* Pods_CursoiOS_Proyecto2Tests.framework */; };
 		D786BCEC2798278F004619AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786BCEB2798278F004619AD /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		456B44B027988B0F004A15B5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		456B44B227988B98004A15B5 /* CollectionControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionControllerBuilder.swift; sourceTree = "<group>"; };
 		456B44B427989722004A15B5 /* CollectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		45771B10279F035400EF2FCF /* ListViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewContract.swift; sourceTree = "<group>"; };
+		45771B12279F048B00EF2FCF /* CatsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListPresenter.swift; sourceTree = "<group>"; };
 		4A5A9FDDF78F23CD2E098C9B /* Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests.release.xcconfig"; path = "Target Support Files/Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests/Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5190E534D46FCB9CC146CE14 /* Pods-CursoiOS-Proyecto2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoiOS-Proyecto2.debug.xcconfig"; path = "Target Support Files/Pods-CursoiOS-Proyecto2/Pods-CursoiOS-Proyecto2.debug.xcconfig"; sourceTree = "<group>"; };
 		5ECEBAD0D04B22085C34E2AC /* Pods_CursoiOS_Proyecto2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CursoiOS_Proyecto2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,8 @@
 				456B44A0279864CD004A15B5 /* ListViewController.swift */,
 				456B44A227986A24004A15B5 /* ListControllerBuilder.swift */,
 				451D09E12799D70500FB5A3B /* ListTableViewCell.swift */,
+				45771B10279F035400EF2FCF /* ListViewContract.swift */,
+				45771B12279F048B00EF2FCF /* CatsListPresenter.swift */,
 			);
 			path = ListController;
 			sourceTree = "<group>";
@@ -513,12 +519,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45771B13279F048B00EF2FCF /* CatsListPresenter.swift in Sources */,
 				D786BD2C27982D07004619AD /* InitialControllerBuilder.swift in Sources */,
 				D786BCEC2798278F004619AD /* AppDelegate.swift in Sources */,
 				451D09DE2799BB3500FB5A3B /* FetchCatsUseCase.swift in Sources */,
 				456B44A327986A24004A15B5 /* ListControllerBuilder.swift in Sources */,
 				456B44A1279864CD004A15B5 /* ListViewController.swift in Sources */,
 				456B44B527989722004A15B5 /* CollectionCollectionViewCell.swift in Sources */,
+				45771B11279F035400EF2FCF /* ListViewContract.swift in Sources */,
 				456B44B127988B0F004A15B5 /* CollectionViewController.swift in Sources */,
 				456B44B327988B98004A15B5 /* CollectionControllerBuilder.swift in Sources */,
 				451D09E02799BB5200FB5A3B /* Cat.swift in Sources */,

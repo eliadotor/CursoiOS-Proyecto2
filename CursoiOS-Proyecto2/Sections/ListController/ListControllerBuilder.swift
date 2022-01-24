@@ -12,11 +12,11 @@ class ListControllerBuilder {
     
     func build()-> UIViewController {
         let viewController = ListViewController.createFromStoryBoard()
-        // inyeccion de dependencias
-        //viewController.fetchLandmarks = FetchLandmarksFromDisk()
-        viewController.fetchCats = FetchCatsFromApi()
-        viewController.detailBuilder = DetailControllerBuilder()
-        
+        let presenter = CatsListPresenter()
+        let fetchCats = FetchCatsFromApi()
+        viewController.presenter = presenter
+        presenter.view = viewController
+        presenter.fetchCats = fetchCats
         return viewController
     }
         

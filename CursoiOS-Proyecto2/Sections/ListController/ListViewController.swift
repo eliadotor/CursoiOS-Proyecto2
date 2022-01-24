@@ -8,14 +8,11 @@
 import UIKit
 import Kingfisher
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, ListViewContract {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var fetchCats : FetchCatsUseCase?
-    // Dependencia
-    //var fetchLandmarks: FetchLandmarksUseCase?
-    var detailBuilder: DetailControllerBuilder?
+    var presenter: ListPresenterContract?
     
     static func createFromStoryBoard() -> ListViewController {
         return UIStoryboard(name: "ListViewController", bundle: .main).instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
@@ -25,78 +22,49 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        fetchData()
-        
+        presenter?.viewDidLoad()
     }
     
-    private var cats = [Cat]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
-    private var favorites = [String]()
-    
-    private func fetchData(){
-        fetchCats?.fetchCats(completion: { cats in
-            self.cats = cats
-        })
+    func setFavorite(_ favorite: Bool, at indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            guard let cell = self.tableView.cellForRow(at: indexPath) as? ListTableViewCell else {return}
+            cell.isFavorite = favorite
+        }
     }
-    
-
 }
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cat = cats[indexPath.row]
-        guard let detailController = detailBuilder?.build(viewModel: cat.toDetailViewModel) else {
-            return
-        }
-        
-        //let viewController = DetailControllerBuilder().build(viewModel: landmark.toDetailViewModel)
-        navigationController?.pushViewController(detailController, animated: true)
+        presenter?.didSelectItem(at: indexPath)
     }
 }
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cats.count
+        return presenter?.numItems ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
-        let cat = cats[indexPath.row]
+        guard let viewModel = presenter?.cellViewModel(at: indexPath), let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as? ListTableViewCell else {
+            fatalError()
+        }
         
         cell.delegate = self
-        cell.isFavorite = favorites.contains(cat.id)
-        cell.configure(viewModel: cat.toListCellViewModel)
-        /*if let url = cat.imageUrl, let data = try? Data(contentsOf: url) {
-            cell.imageView?.image = UIImage(data: data)
-        }*/
+        cell.isFavorite = presenter?.isFavorite(at: indexPath) ?? false
+        cell.configure(viewModel: viewModel)
         
         return cell
     }
 }
 
-
 extension ListViewController: ListTableViewDelegate {
     func didPressInFavorite(cell: ListTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else {return}
-        cell.isFavorite = !cell.isFavorite
-        //cell.isFavorite.toggle()
-        let cat = cats[indexPath.row]
-        if cell.isFavorite {
-            favorites.append(cat.id)
-        } else if let index = favorites.firstIndex(of: cat.id){
-            favorites.remove(at: index)
-        }
+        presenter?.didSelectFavorite(at: indexPath)
     }
 }
-/*
- Es lo mismo que meter la función static directamente en la clase
-extension ListViewController {
-    static func createFromStoryBoard() -> ListViewController {
-        return UIStoryboard(name: "ListViewController", bundle: .main).instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
-    }
-}*/
