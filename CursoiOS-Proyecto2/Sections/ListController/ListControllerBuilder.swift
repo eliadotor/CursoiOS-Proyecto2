@@ -14,6 +14,8 @@ class ListControllerBuilder {
         let viewController = ListViewController.createFromStoryBoard()
         let presenter = CatsListPresenter()
         let interactor = CatsListInteractor()
+        interactor.catsProvider = NetworkCatsListProvider()
+        
         let wireframe = CatsListWireframe()
         viewController.presenter = presenter
         presenter.view = viewController

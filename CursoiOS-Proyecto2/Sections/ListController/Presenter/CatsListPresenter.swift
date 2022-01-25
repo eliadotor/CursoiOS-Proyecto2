@@ -12,7 +12,7 @@ class CatsListPresenter: ListPresenterContract {
 
     var view: ListViewController?
     var interactor: ListInteractorContrac?
-    var wireframe: CatListWireframeContract?
+    var wireframe: CatsListWireframeContract?
     
     private var cats = [Cat]() {
         didSet {

@@ -25,6 +25,7 @@
 		45771B13279F048B00EF2FCF /* CatsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771B12279F048B00EF2FCF /* CatsListPresenter.swift */; };
 		45771B15279F1DA400EF2FCF /* CatsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771B14279F1DA400EF2FCF /* CatsListInteractor.swift */; };
 		45771B1B279F216800EF2FCF /* CatsListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771B1A279F216800EF2FCF /* CatsListWireframe.swift */; };
+		45C53F2227A04AE400164FA8 /* CatsListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C53F2127A04AE400164FA8 /* CatsListProvider.swift */; };
 		4A80F5C5B32416B3AC33509A /* Pods_CursoiOS_Proyecto2_CursoiOS_Proyecto2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C321E8C5F02F48E5A9D07054 /* Pods_CursoiOS_Proyecto2_CursoiOS_Proyecto2UITests.framework */; };
 		89656A158BEB54E4C8B64E66 /* Pods_CursoiOS_Proyecto2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECEBAD0D04B22085C34E2AC /* Pods_CursoiOS_Proyecto2Tests.framework */; };
 		D786BCEC2798278F004619AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786BCEB2798278F004619AD /* AppDelegate.swift */; };
@@ -78,6 +79,7 @@
 		45771B12279F048B00EF2FCF /* CatsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListPresenter.swift; sourceTree = "<group>"; };
 		45771B14279F1DA400EF2FCF /* CatsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListInteractor.swift; sourceTree = "<group>"; };
 		45771B1A279F216800EF2FCF /* CatsListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListWireframe.swift; sourceTree = "<group>"; };
+		45C53F2127A04AE400164FA8 /* CatsListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListProvider.swift; sourceTree = "<group>"; };
 		4A5A9FDDF78F23CD2E098C9B /* Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests.release.xcconfig"; path = "Target Support Files/Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests/Pods-CursoiOS-Proyecto2-CursoiOS-Proyecto2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5190E534D46FCB9CC146CE14 /* Pods-CursoiOS-Proyecto2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoiOS-Proyecto2.debug.xcconfig"; path = "Target Support Files/Pods-CursoiOS-Proyecto2/Pods-CursoiOS-Proyecto2.debug.xcconfig"; sourceTree = "<group>"; };
 		5ECEBAD0D04B22085C34E2AC /* Pods_CursoiOS_Proyecto2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CursoiOS_Proyecto2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,14 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
+		45C53F2027A04ABE00164FA8 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				45C53F2127A04AE400164FA8 /* CatsListProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		BF3FAA9803ACC0B32DF45BBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +247,7 @@
 		D786BCEA2798278F004619AD /* CursoiOS-Proyecto2 */ = {
 			isa = PBXGroup;
 			children = (
+				45C53F2027A04ABE00164FA8 /* Providers */,
 				D786BD1B2798285A004619AD /* Sections */,
 				D786BD1F27982A32004619AD /* UseCases */,
 				D786BD2227982A65004619AD /* Models */,
@@ -568,6 +579,7 @@
 				45771B11279F035400EF2FCF /* ListViewContract.swift in Sources */,
 				456B44B127988B0F004A15B5 /* CollectionViewController.swift in Sources */,
 				45771B15279F1DA400EF2FCF /* CatsListInteractor.swift in Sources */,
+				45C53F2227A04AE400164FA8 /* CatsListProvider.swift in Sources */,
 				456B44B327988B98004A15B5 /* CollectionControllerBuilder.swift in Sources */,
 				451D09E02799BB5200FB5A3B /* Cat.swift in Sources */,
 				456B44AC279875C7004A15B5 /* DetailControllerBuilder.swift in Sources */,

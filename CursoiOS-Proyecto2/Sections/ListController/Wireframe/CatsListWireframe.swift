@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class CatsListWireframe: CatListWireframeContract{
+class CatsListWireframe: CatsListWireframeContract{
     var view: UIViewController?
     
     func navigate(to cat: Cat) {

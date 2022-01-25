@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 protocol ListViewContract: UIViewController {
     var presenter: ListPresenterContract? {set get}
     
@@ -19,11 +18,9 @@ protocol ListViewContract: UIViewController {
 protocol ListPresenterContract: AnyObject {
     var view: ListViewController? {set get}
     var interactor: ListInteractorContrac? {set get}
-    
     var numItems: Int {get}
     
     func viewDidLoad()
-    
     func cellViewModel(at indexPath: IndexPath) -> ListTableCellViewModel
     func isFavorite(at indexPath: IndexPath) -> Bool
     func didSelectFavorite(at indexPath: IndexPath)
@@ -31,6 +28,7 @@ protocol ListPresenterContract: AnyObject {
 }
 
 protocol ListInteractorContrac {
+    var catsProvider: CatsListProviderContract? {get set}
     var output: ListInteractorOutputContrac? {get set}
     func fetchItems()
     func didPressFavorite(in cat: Cat)
@@ -43,7 +41,7 @@ protocol ListInteractorOutputContrac {
     func didUpdateFavorites(in cat: Cat, favorite: Bool)
 }
 
-protocol CatListWireframeContract {
+protocol CatsListWireframeContract {
     var view: UIViewController? {get set}
     func navigate(to cat: Cat)
 }
