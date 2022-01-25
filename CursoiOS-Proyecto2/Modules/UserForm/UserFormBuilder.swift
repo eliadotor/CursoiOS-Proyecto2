@@ -12,6 +12,9 @@ import UIKit
 class UserFormBuilder {
     func build() -> UIViewController {
         let viewController = UserFormViewController.createFromStoryBoard()
+        let presenter = UserFromPresenter()
+        presenter.view = viewController
+        viewController.presenter = presenter
         return viewController
     }
 }
