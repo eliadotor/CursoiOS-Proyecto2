@@ -16,6 +16,9 @@ class UserFormViewController: UIViewController, UserFormViewContract {
     
     var presenter: UserFormPresenterContract?
     
+    @IBAction func scrollViewTapped(_ sender: Any) {
+        view.endEditing(true)
+    }
     static func createFromStoryBoard() -> UserFormViewController {
         return UIStoryboard(name: "UserFormViewController", bundle: .main).instantiateViewController(withIdentifier: "UserFormViewController") as! UserFormViewController
     }
@@ -25,6 +28,28 @@ class UserFormViewController: UIViewController, UserFormViewContract {
         
         [mailInput,phoneInput, lastNameInput, nameInput].forEach { input in
             input?.delegate = self
+        }
+    }
+    
+    func didValidateName(_ valid: Bool) {
+        didUpdateValidation(input: nameInput, valid: valid)
+    }
+    
+    func didValidateLastName(_ valid: Bool) {
+        didUpdateValidation(input: lastNameInput, valid: valid)
+    }
+    
+    func didValidatePhone(_ valid: Bool) {
+        didUpdateValidation(input: phoneInput, valid: valid)
+    }
+    
+    func didValidateMail(_ valid: Bool) {
+        didUpdateValidation(input: mailInput, valid: valid)
+    }
+    
+    private func didUpdateValidation(input: UITextField, valid: Bool) {
+        DispatchQueue.main.async {
+            input.backgroundColor = valid ? .systemBackground : .systemRed
         }
     }
     

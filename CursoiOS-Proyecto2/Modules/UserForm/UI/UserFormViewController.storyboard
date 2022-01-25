@@ -124,6 +124,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="mMP-wj-Ytw" firstAttribute="top" secondItem="v10-6W-WOJ" secondAttribute="top" id="G04-9s-y5M"/>
                                     <constraint firstItem="mMP-wj-Ytw" firstAttribute="leading" secondItem="v10-6W-WOJ" secondAttribute="leading" id="LvS-x2-Rtp"/>
@@ -133,6 +134,9 @@
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="v10-6W-WOJ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iJT-mb-VWK"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rPl-bY-Lg5" appends="YES" id="maP-Q5-Gjp"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -152,6 +156,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="rPl-bY-Lg5">
+                    <connections>
+                        <action selector="scrollViewTapped:" destination="Y6W-OH-hqX" id="GsF-kq-E6z"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="132" y="76"/>
         </scene>
