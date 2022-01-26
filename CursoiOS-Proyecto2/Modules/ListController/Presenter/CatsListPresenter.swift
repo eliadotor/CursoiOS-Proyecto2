@@ -10,7 +10,7 @@ import Foundation
 
 class CatsListPresenter: ListPresenterContract {    
 
-    var view: ListViewController?
+    weak var view: ListViewController?
     var interactor: ListInteractorContrac?
     var wireframe: CatsListWireframeContract?
     
@@ -52,6 +52,9 @@ class CatsListPresenter: ListPresenterContract {
     private func fetchData(){
         interactor?.fetchItems()
     }
+    deinit {
+        print("deinit \(self)")
+    }
 }
 
 
@@ -68,4 +71,5 @@ extension CatsListPresenter: ListInteractorOutputContrac {
         guard let index = cats.firstIndex(of: cat) else {return}
         view?.setFavorite(favorite, at: IndexPath.init(row: index, section: 0))
     }
+    
 }

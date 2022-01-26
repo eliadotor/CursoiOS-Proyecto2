@@ -17,6 +17,7 @@ protocol CatsListProviderContract {
 }
 
 class NetworkCatsListProvider: CatsListProviderContract {
+    //var cats = [Cat]()
     func getCatsList(_ completion: @escaping (Result<[Cat], CatsListProviderError>) -> ()) {
         guard let url = URL(string: "https://cataas.com/api/cats") else {
             completion(.failure(.badUrl))
@@ -24,11 +25,17 @@ class NetworkCatsListProvider: CatsListProviderContract {
         }
         
         let request = URLRequest(url: url)
+        //AF.request(request).responseDecodable { [weak self](response: DataResponse<[Cat], AFError>) in
         AF.request(request).responseDecodable { (response: DataResponse<[Cat], AFError>) in
             switch response.result {
-            case.success(let cats): completion(.success(cats))
+            case.success(let cats):
+                //self?.cats = cats
+                completion(.success(cats))
             case.failure(let error): completion(.failure(.generic(error)))
             }
         }.validate()
+    }
+    deinit {
+        print("deinit \(self)")
     }
 }

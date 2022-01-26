@@ -12,7 +12,7 @@ class CatsListInteractor: ListInteractorContrac {
     
     private static var favoritesKey = "favorite.cats.array"
     
-    var output: ListInteractorOutputContrac?
+    weak var output: ListInteractorOutputContrac?
     var catsProvider: CatsListProviderContract?
     
     private let userDefaults: UserDefaults
@@ -67,5 +67,8 @@ class CatsListInteractor: ListInteractorContrac {
     
     func isFavorite(cat: Cat) -> Bool {
         return favorites.contains(cat.id)
+    }
+    deinit {
+        print("deinit \(self)")
     }
 }

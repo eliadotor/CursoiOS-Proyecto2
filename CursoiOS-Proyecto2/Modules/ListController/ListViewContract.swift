@@ -35,7 +35,7 @@ protocol ListInteractorContrac {
     func isFavorite(cat: Cat) -> Bool
 }
 
-protocol ListInteractorOutputContrac {
+protocol ListInteractorOutputContrac: AnyObject {
     func didFetch(cats: [Cat])
     func fetchDidFail()
     func didUpdateFavorites(in cat: Cat, favorite: Bool)

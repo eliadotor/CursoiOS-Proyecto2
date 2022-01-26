@@ -37,6 +37,9 @@ class ListViewController: UIViewController, ListViewContract {
             cell.isFavorite = favorite
         }
     }
+    deinit {
+        print("deinit \(self)")
+    }
 }
 
 extension ListViewController: UITableViewDelegate {

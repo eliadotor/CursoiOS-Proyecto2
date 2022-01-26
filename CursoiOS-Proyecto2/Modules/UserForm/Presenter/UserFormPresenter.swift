@@ -11,7 +11,7 @@ import Foundation
 class UserFromPresenter: UserFormPresenterContract {
     
     
-    var view: UserFormViewContract?
+    weak var view: UserFormViewContract?
     //Esto iría en el interactor
     private let fileManager: FileManager
     private let filename: String
@@ -68,6 +68,9 @@ class UserFromPresenter: UserFormPresenterContract {
         }
         print("success")
         saveUser(userFormModel)
+    }
+    deinit {
+        print("deinit \(self)")
     }
 }
 

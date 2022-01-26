@@ -53,6 +53,21 @@ class UserFormViewController: UIViewController, UserFormViewContract {
         
     }
     
+    @IBAction func inputDidChange(_ textField: UITextField) {
+        textFieldDidChange(textField)
+    }
+    
+    private func textFieldDidChange(_ textField: UITextField) {
+        switch textField {
+            case nameInput: presenter?.didUpdateName(textField.text)
+            case lastNameInput: presenter?.didUpdateLastName(textField.text)
+            case phoneInput: presenter?.didUpdatePhone(textField.text)
+            case mailInput: presenter?.didUpdateMail(textField.text)
+            default: break
+           
+        }
+    }
+    
     func configure(with viewModel: UserFormViewModel) {
         DispatchQueue.main.async {
             self.nameInput.text = viewModel.name
@@ -106,7 +121,9 @@ class UserFormViewController: UIViewController, UserFormViewContract {
         @objc func keyboardWillHide(notification: NSNotification){
             scrollView.contentInset.bottom = 0
         }
-
+        deinit {
+            print("deinit \(self)")
+        }
     
 }
 
@@ -118,14 +135,14 @@ extension UserFormViewController: UITextViewDelegate {
 
 extension UserFormViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        switch textField {
-        case nameInput: presenter?.didUpdateName(textField.text)
-        case lastNameInput: presenter?.didUpdateLastName(textField.text)
-        case phoneInput: presenter?.didUpdatePhone(textField.text)
-        case mailInput: presenter?.didUpdateMail(textField.text)
-        default: break
-        }
+        textFieldDidChange(textField)
+//        switch textField {
+//        case nameInput: presenter?.didUpdateName(textField.text)
+//        case lastNameInput: presenter?.didUpdateLastName(textField.text)
+//        case phoneInput: presenter?.didUpdatePhone(textField.text)
+//        case mailInput: presenter?.didUpdateMail(textField.text)
+//        default: break
+//        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
