@@ -49,6 +49,11 @@ private extension UserFormModel {
         guard let field = field else {
             return false
         }
+        switch field{
+            case mail: return !field.isEmpty && field.isValidEmail
+            case phone: return !field.isEmpty && field.isValidPhone
+            default: break
+        }
         return !field.isEmpty
     }
 }
