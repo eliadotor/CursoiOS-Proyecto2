@@ -13,6 +13,9 @@
 		451D09E22799D70500FB5A3B /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451D09E12799D70500FB5A3B /* ListTableViewCell.swift */; };
 		4532A89A27A1BB5E00FEFC33 /* CatsToFormWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532A89927A1BB5E00FEFC33 /* CatsToFormWireframe.swift */; };
 		4532A89C27A1BE5200FEFC33 /* CatsToCatsListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532A89B27A1BE5200FEFC33 /* CatsToCatsListWireframe.swift */; };
+		4532A89F27A1C3D800FEFC33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4532A8A127A1C3D800FEFC33 /* Localizable.strings */; };
+		4532A8A527A1C85000FEFC33 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532A8A427A1C85000FEFC33 /* StringExtensions.swift */; };
+		4532A8A727A1C90B00FEFC33 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532A8A627A1C90B00FEFC33 /* UIViewControllerExtensions.swift */; };
 		456B449F27986440004A15B5 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456B449E27986440004A15B5 /* ListViewController.storyboard */; };
 		456B44A1279864CD004A15B5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44A0279864CD004A15B5 /* ListViewController.swift */; };
 		456B44A327986A24004A15B5 /* ListControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44A227986A24004A15B5 /* ListControllerBuilder.swift */; };
@@ -75,6 +78,10 @@
 		451D09E12799D70500FB5A3B /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		4532A89927A1BB5E00FEFC33 /* CatsToFormWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsToFormWireframe.swift; sourceTree = "<group>"; };
 		4532A89B27A1BE5200FEFC33 /* CatsToCatsListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsToCatsListWireframe.swift; sourceTree = "<group>"; };
+		4532A8A027A1C3D800FEFC33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4532A8A227A1C45000FEFC33 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4532A8A427A1C85000FEFC33 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		4532A8A627A1C90B00FEFC33 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		456B449E27986440004A15B5 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
 		456B44A0279864CD004A15B5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		456B44A227986A24004A15B5 /* ListControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListControllerBuilder.swift; sourceTree = "<group>"; };
@@ -149,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4532A8A327A1C82300FEFC33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4532A8A427A1C85000FEFC33 /* StringExtensions.swift */,
+				4532A8A627A1C90B00FEFC33 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		456B449D2798640F004A15B5 /* ListController */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +309,7 @@
 		D786BCEA2798278F004619AD /* CursoiOS-Proyecto2 */ = {
 			isa = PBXGroup;
 			children = (
+				4532A8A327A1C82300FEFC33 /* Extensions */,
 				45C53F2027A04ABE00164FA8 /* Providers */,
 				D786BD1B2798285A004619AD /* Modules */,
 				D786BD1F27982A32004619AD /* UseCases */,
@@ -360,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				D786BD2827982B7E004619AD /* landmarkData.json */,
+				4532A8A127A1C3D800FEFC33 /* Localizable.strings */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -465,6 +483,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D786BCDF2798278F004619AD;
 			productRefGroup = D786BCE92798278F004619AD /* Products */;
@@ -488,6 +507,7 @@
 				D786BCF527982793004619AD /* Assets.xcassets in Resources */,
 				456B44AA279874DD004A15B5 /* DetailViewController.xib in Resources */,
 				456B44AF27988AFF004A15B5 /* CollectionViewController.storyboard in Resources */,
+				4532A89F27A1C3D800FEFC33 /* Localizable.strings in Resources */,
 				D786BD2927982B7E004619AD /* landmarkData.json in Resources */,
 				456B449F27986440004A15B5 /* ListViewController.storyboard in Resources */,
 			);
@@ -631,6 +651,7 @@
 				4532A89A27A1BB5E00FEFC33 /* CatsToFormWireframe.swift in Sources */,
 				45771B11279F035400EF2FCF /* ListViewContract.swift in Sources */,
 				456B44B127988B0F004A15B5 /* CollectionViewController.swift in Sources */,
+				4532A8A727A1C90B00FEFC33 /* UIViewControllerExtensions.swift in Sources */,
 				45771B15279F1DA400EF2FCF /* CatsListInteractor.swift in Sources */,
 				45C53F2227A04AE400164FA8 /* CatsListProvider.swift in Sources */,
 				456B44B327988B98004A15B5 /* CollectionControllerBuilder.swift in Sources */,
@@ -641,6 +662,7 @@
 				D786BCEE2798278F004619AD /* SceneDelegate.swift in Sources */,
 				D786BD2127982A45004619AD /* FetchLandmarksUseCase.swift in Sources */,
 				D786BD2427982A72004619AD /* Landmark.swift in Sources */,
+				4532A8A527A1C85000FEFC33 /* StringExtensions.swift in Sources */,
 				456B44A9279874DD004A15B5 /* DetailViewController.swift in Sources */,
 				451D09E22799D70500FB5A3B /* ListTableViewCell.swift in Sources */,
 				45C53F3127A06C8D00164FA8 /* UserFormModel.swift in Sources */,
@@ -681,6 +703,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4532A8A127A1C3D800FEFC33 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4532A8A027A1C3D800FEFC33 /* en */,
+				4532A8A227A1C45000FEFC33 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D786BCF627982793004619AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -696,6 +727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -757,6 +789,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

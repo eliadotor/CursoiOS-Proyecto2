@@ -22,6 +22,17 @@ class UserFormViewController: UIViewController, UserFormViewContract {
     @IBOutlet weak var phoneInput: UITextField!
     @IBOutlet weak var mailInput: UITextField!
     
+    @IBOutlet weak var nameLabel: UILabel! {
+        didSet {
+            nameLabel.text = "user_form_name_label".localized
+        }
+    }
+    @IBOutlet weak var lastNameLabel: UILabel! {
+        didSet {
+            lastNameLabel.text = NSLocalizedString("user_form_last_name_label", comment: "")
+        }
+    }
+    
     @IBOutlet weak var userBioTextArea: UITextView!
     
     var presenter: UserFormPresenterContract?
@@ -38,9 +49,9 @@ class UserFormViewController: UIViewController, UserFormViewContract {
         presenter?.didPressSend()
     }
     
-    static func createFromStoryBoard() -> UserFormViewController {
-        return UIStoryboard(name: "UserFormViewController", bundle: .main).instantiateViewController(withIdentifier: "UserFormViewController") as! UserFormViewController
-    }
+//    static func createFromStoryBoard() -> UserFormViewController {
+//        return UIStoryboard(name: "UserFormViewController", bundle: .main).instantiateViewController(withIdentifier: "UserFormViewController") as! UserFormViewController
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

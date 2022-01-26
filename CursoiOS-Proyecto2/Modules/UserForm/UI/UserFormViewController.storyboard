@@ -215,8 +215,10 @@
                     </view>
                     <connections>
                         <outlet property="lastNameInput" destination="dmh-Dd-pqb" id="vwe-qZ-bFw"/>
+                        <outlet property="lastNameLabel" destination="XN9-cq-FHd" id="gX5-KQ-51w"/>
                         <outlet property="mailInput" destination="Y4J-kH-T9O" id="Nak-pv-zR2"/>
                         <outlet property="nameInput" destination="gJq-Hd-1XF" id="aIB-e1-nau"/>
+                        <outlet property="nameLabel" destination="iT2-Og-vur" id="M3G-L9-Dlt"/>
                         <outlet property="phoneInput" destination="p9X-nX-hzI" id="52z-EG-MNX"/>
                         <outlet property="scrollView" destination="XMt-cg-Jq7" id="ICE-PO-tGt"/>
                         <outlet property="userBioTextArea" destination="ubx-LE-IcP" id="crD-G9-F0K"/>

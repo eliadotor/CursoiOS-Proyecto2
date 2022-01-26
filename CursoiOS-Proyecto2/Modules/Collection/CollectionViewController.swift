@@ -10,9 +10,9 @@ import UIKit
 class CollectionViewController: UIViewController {
 
     
-    static func createFromStoryBoard() -> CollectionViewController {
-        return UIStoryboard(name: "CollectionViewController", bundle: .main).instantiateViewController(withIdentifier: "CollectionViewController") as! CollectionViewController
-    }
+//    static func createFromStoryBoard() -> CollectionViewController {
+//        return UIStoryboard(name: "CollectionViewController", bundle: .main).instantiateViewController(withIdentifier: "CollectionViewController") as! CollectionViewController
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

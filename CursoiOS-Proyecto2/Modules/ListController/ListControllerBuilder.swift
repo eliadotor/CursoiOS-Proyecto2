@@ -12,6 +12,7 @@ class ListControllerBuilder {
     
     func build()-> UIViewController {
         let viewController = ListViewController.createFromStoryBoard()
+        viewController.navigationItem.title = "Cats List"
         let presenter = CatsListPresenter()
         let interactor = CatsListInteractor()
         interactor.catsProvider = NetworkCatsListProvider()

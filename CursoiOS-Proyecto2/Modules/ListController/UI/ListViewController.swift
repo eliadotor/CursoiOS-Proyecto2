@@ -14,9 +14,9 @@ class ListViewController: UIViewController, ListViewContract {
     
     var presenter: ListPresenterContract?
     
-    static func createFromStoryBoard() -> ListViewController {
-        return UIStoryboard(name: "ListViewController", bundle: .main).instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
-    }
+//    static func createFromStoryBoard() -> ListViewController {
+//        return UIStoryboard(name: "ListViewController", bundle: .main).instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
