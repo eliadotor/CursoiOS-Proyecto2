@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct UserFormModel {
+struct UserFormModel: Codable {
     var name:String?
     var lastName: String?
     var phone:String?
@@ -36,6 +36,10 @@ extension UserFormModel {
     
     var isValid: Bool {
         return isValidName && isValidLastName && isValidPhone && isValidMail
+    }
+    
+    var toFormViewModel: UserFormViewModel {
+        return UserFormViewModel(name: name, lastName: lastName, phone: phone, mail: mail, bio: bio)
     }
 }
 

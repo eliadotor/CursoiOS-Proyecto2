@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMP-wj-Ytw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="655.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="744.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="62J-dQ-V7z">
-                                                <rect key="frame" x="15" y="30" width="384" height="655.5"/>
+                                                <rect key="frame" x="15" y="30" width="384" height="684.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzB-v4-b8X">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
@@ -132,7 +132,7 @@
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ubx-LE-IcP">
                                                         <rect key="frame" x="0.0" y="404.5" width="384" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="22z-TH-M7d"/>
                                                         </constraints>
@@ -141,10 +141,15 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-cy-Dc0">
-                                                        <rect key="frame" x="0.0" y="624.5" width="384" height="31"/>
+                                                        <rect key="frame" x="0.0" y="624.5" width="384" height="60"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzB-Nr-weQ">
-                                                                <rect key="frame" x="20" y="0.0" width="344" height="31"/>
+                                                                <rect key="frame" x="20" y="0.0" width="344" height="60"/>
+                                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="Eao-NE-JPC"/>
+                                                                </constraints>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Send"/>
                                                                 <connections>
@@ -165,7 +170,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="62J-dQ-V7z" secondAttribute="bottom" constant="-30" id="2oI-Tz-DMc"/>
+                                            <constraint firstAttribute="bottom" secondItem="62J-dQ-V7z" secondAttribute="bottom" constant="30" id="2oI-Tz-DMc"/>
                                             <constraint firstAttribute="trailing" secondItem="62J-dQ-V7z" secondAttribute="trailing" constant="15" id="53T-qB-5XG"/>
                                             <constraint firstItem="62J-dQ-V7z" firstAttribute="top" secondItem="mMP-wj-Ytw" secondAttribute="top" constant="30" id="LZx-BL-Bzy"/>
                                             <constraint firstItem="62J-dQ-V7z" firstAttribute="leading" secondItem="mMP-wj-Ytw" secondAttribute="leading" constant="15" id="PBi-VQ-8GB"/>
@@ -222,8 +227,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -35,6 +35,4 @@ class DetailViewController: UIViewController {
         nameLabel.text = viewModel.name
     }
 
-    
-
 }
