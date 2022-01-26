@@ -13,6 +13,7 @@ struct UserFormModel {
     var lastName: String?
     var phone:String?
     var mail: String?
+    var bio: String?
 }
 
 
@@ -31,6 +32,10 @@ extension UserFormModel {
     
     var isValidMail: Bool {
         return validate(field: mail)
+    }
+    
+    var isValid: Bool {
+        return isValidName && isValidLastName && isValidPhone && isValidMail
     }
 }
 

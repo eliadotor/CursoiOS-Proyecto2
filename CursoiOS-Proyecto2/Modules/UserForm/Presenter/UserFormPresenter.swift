@@ -9,9 +9,11 @@ import Foundation
 
 
 class UserFromPresenter: UserFormPresenterContract {
+    
+    
     var view: UserFormViewContract?
     
-    private var userFormModel = UserFormModel(name: nil, lastName: nil, phone: nil, mail: nil) {
+    private var userFormModel = UserFormModel(name: nil, lastName: nil, phone: nil, mail: nil, bio: nil) {
         didSet {
             print(userFormModel)
         }
@@ -37,5 +39,17 @@ class UserFromPresenter: UserFormPresenterContract {
         view?.didValidateMail(userFormModel.isValidMail)
     }
     
+    func didUpdateBio(_ bio: String?) {
+        userFormModel.bio = bio
+    }
     
+    func didPressSend() {
+        guard userFormModel.isValid else {
+            view?.showValidationError()
+            print("retry")
+
+            return
+        }
+        print("success")
+    }
 }

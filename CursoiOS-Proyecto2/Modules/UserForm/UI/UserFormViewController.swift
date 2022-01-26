@@ -14,18 +14,29 @@ class UserFormViewController: UIViewController, UserFormViewContract {
     @IBOutlet weak var phoneInput: UITextField!
     @IBOutlet weak var mailInput: UITextField!
     
+    @IBOutlet weak var userBioTextArea: UITextView!
+    
     var presenter: UserFormPresenterContract?
     
     @IBAction func scrollViewTapped(_ sender: Any) {
         view.endEditing(true)
     }
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    
+
+
+    @IBAction func sendPressed(_ sender: Any) {
+        presenter?.didPressSend()
+    }
+    
     static func createFromStoryBoard() -> UserFormViewController {
         return UIStoryboard(name: "UserFormViewController", bundle: .main).instantiateViewController(withIdentifier: "UserFormViewController") as! UserFormViewController
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        registerNotifications()
         [mailInput,phoneInput, lastNameInput, nameInput].forEach { input in
             input?.delegate = self
         }
@@ -47,14 +58,42 @@ class UserFormViewController: UIViewController, UserFormViewContract {
         didUpdateValidation(input: mailInput, valid: valid)
     }
     
+    func showValidationError() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error de validación", message: "Por favor revisa los campos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Aceptar", style: .default))
+            self.present(alert, animated: true)
+        }
+    }
+    
     private func didUpdateValidation(input: UITextField, valid: Bool) {
         DispatchQueue.main.async {
             input.backgroundColor = valid ? .systemBackground : .systemRed
         }
     }
     
+    func registerNotifications() {
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        }
+
+        @objc func keyboardWillShow(notification: NSNotification){
+            guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+            scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
+        }
+
+        @objc func keyboardWillHide(notification: NSNotification){
+            scrollView.contentInset.bottom = 0
+        }
+
+    
 }
 
+extension UserFormViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        presenter?.didUpdateBio(textView.text)
+    }
+}
 
 extension UserFormViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
