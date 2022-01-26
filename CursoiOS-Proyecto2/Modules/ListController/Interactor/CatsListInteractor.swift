@@ -8,28 +8,31 @@
 import Foundation
 import Alamofire
 
+
+
 class CatsListInteractor: ListInteractorContrac {
     
-    private static var favoritesKey = "favorite.cats.array"
+//    private static var favoritesKey = "favorite.cats.array"
     
     weak var output: ListInteractorOutputContrac?
     var catsProvider: CatsListProviderContract?
+    var favoritesProvider: FavoritesProvider?
     
-    private let userDefaults: UserDefaults
+//    private let userDefaults: UserDefaults
     
-    init(userDefaults: UserDefaults = UserDefaults.standard) {
-        self.userDefaults = userDefaults
-    }
-    
-    private var favorites: [String] {
-        get {
-            userDefaults.stringArray(forKey: CatsListInteractor.favoritesKey) ?? []
-        }
-        
-        set {
-            userDefaults.setValue(newValue, forKey: CatsListInteractor.favoritesKey)
-        }
-    }
+//    init(userDefaults: UserDefaults = UserDefaults.standard) {
+//        self.userDefaults = userDefaults
+//    }
+//    
+//    private var favorites: [String] {
+//        get {
+//            userDefaults.stringArray(forKey: CatsListInteractor.favoritesKey) ?? []
+//        }
+//        
+//        set {
+//            userDefaults.setValue(newValue, forKey: CatsListInteractor.favoritesKey)
+//        }
+//    }
     
     func fetchItems() {
         catsProvider?.getCatsList({result in
@@ -55,18 +58,24 @@ class CatsListInteractor: ListInteractorContrac {
     }
     
     func didPressFavorite(in cat: Cat) {
-        if !favorites.contains(cat.id) {
-            favorites.append(cat.id)
-            output?.didUpdateFavorites(in: cat, favorite: true)
-            
-        } else if let index = favorites.firstIndex(of: cat.id) {
-            favorites.remove(at: index)
-            output?.didUpdateFavorites(in: cat, favorite: false)
-        }
+        favoritesProvider?.didUpdateFavorite(id: cat.id, { result in
+            switch result {
+            case .success(let favorite): self.output?.didUpdateFavorites(in: cat, favorite: favorite)
+            case .failure: break;
+            }
+        })
+//        if !favorites.contains(cat.id) {
+//            favorites.append(cat.id)
+//            output?.didUpdateFavorites(in: cat, favorite: true)
+//            
+//        } else if let index = favorites.firstIndex(of: cat.id) {
+//            favorites.remove(at: index)
+//            output?.didUpdateFavorites(in: cat, favorite: false)
+//        }
     }
     
     func isFavorite(cat: Cat) -> Bool {
-        return favorites.contains(cat.id)
+        return favoritesProvider?.isFavorite(id: cat.id) ?? false
     }
     deinit {
         print("deinit \(self)")

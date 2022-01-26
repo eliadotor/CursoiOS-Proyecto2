@@ -16,6 +16,7 @@ class ListControllerBuilder {
         let presenter = CatsListPresenter()
         let interactor = CatsListInteractor()
         interactor.catsProvider = NetworkCatsListProvider()
+        interactor.favoritesProvider = UserDefaultsFavoriteProvider()
         
         let wireframe = CatsListWireframe()
         viewController.presenter = presenter
