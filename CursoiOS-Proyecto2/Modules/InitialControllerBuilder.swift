@@ -17,7 +17,7 @@ class InitialControllerBuilder {
         /*let listViewcontroller = buildList()
         let collectioncontroller = buildCollection()
         let viewControllers = [listViewcontroller, collectioncontroller]*/
-        let viewControllers = [buildList(), buildCollection(), buildForm()]
+        let viewControllers = [buildList(), buildCollection(), buildForm(), PermissionsBuilder().builderForTabBar(tag: 3)]
         tabBarController.setViewControllers(viewControllers, animated: false)
         return tabBarController
     }
