@@ -23,6 +23,9 @@
 		4557415A27A2F536002AB4E6 /* LocationPermissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415927A2F536002AB4E6 /* LocationPermissionInteractor.swift */; };
 		4557415C27A2F912002AB4E6 /* PermissionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415B27A2F912002AB4E6 /* PermissionBuilder.swift */; };
 		4557415E27A30389002AB4E6 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415D27A30389002AB4E6 /* BundleExtensions.swift */; };
+		4557416027A30F1C002AB4E6 /* CatsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415F27A30F1C002AB4E6 /* CatsListInteractorTests.swift */; };
+		4557416827A3181B002AB4E6 /* CursoiOS_Proyecto2IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557416727A3181B002AB4E6 /* CursoiOS_Proyecto2IntegrationTests.swift */; };
+		4557416F27A31865002AB4E6 /* CatsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557416E27A31865002AB4E6 /* CatsProviderTests.swift */; };
 		456B449F27986440004A15B5 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456B449E27986440004A15B5 /* ListViewController.storyboard */; };
 		456B44A1279864CD004A15B5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44A0279864CD004A15B5 /* ListViewController.swift */; };
 		456B44A327986A24004A15B5 /* ListControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44A227986A24004A15B5 /* ListControllerBuilder.swift */; };
@@ -61,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4557416927A3181B002AB4E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D786BCE02798278F004619AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D786BCE72798278F004619AD;
+			remoteInfo = "CursoiOS-Proyecto2";
+		};
 		D786BCFF27982793004619AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D786BCE02798278F004619AD /* Project object */;
@@ -96,6 +106,10 @@
 		4557415927A2F536002AB4E6 /* LocationPermissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionInteractor.swift; sourceTree = "<group>"; };
 		4557415B27A2F912002AB4E6 /* PermissionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionBuilder.swift; sourceTree = "<group>"; };
 		4557415D27A30389002AB4E6 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
+		4557415F27A30F1C002AB4E6 /* CatsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListInteractorTests.swift; sourceTree = "<group>"; };
+		4557416527A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CursoiOS-Proyecto2IntegrationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4557416727A3181B002AB4E6 /* CursoiOS_Proyecto2IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoiOS_Proyecto2IntegrationTests.swift; sourceTree = "<group>"; };
+		4557416E27A31865002AB4E6 /* CatsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsProviderTests.swift; sourceTree = "<group>"; };
 		456B449E27986440004A15B5 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
 		456B44A0279864CD004A15B5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		456B44A227986A24004A15B5 /* ListControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListControllerBuilder.swift; sourceTree = "<group>"; };
@@ -143,6 +157,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4557416227A3181B002AB4E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D786BCE52798278F004619AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +211,14 @@
 				4557415B27A2F912002AB4E6 /* PermissionBuilder.swift */,
 			);
 			path = Permissions;
+			sourceTree = "<group>";
+		};
+		4557416627A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				4557416727A3181B002AB4E6 /* CursoiOS_Proyecto2IntegrationTests.swift */,
+			);
+			path = "CursoiOS-Proyecto2IntegrationTests";
 			sourceTree = "<group>";
 		};
 		456B449D2798640F004A15B5 /* ListController */ = {
@@ -318,6 +347,7 @@
 				D786BCEA2798278F004619AD /* CursoiOS-Proyecto2 */,
 				D786BD0127982793004619AD /* CursoiOS-Proyecto2Tests */,
 				D786BD0B27982793004619AD /* CursoiOS-Proyecto2UITests */,
+				4557416627A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests */,
 				D786BCE92798278F004619AD /* Products */,
 				BF3FAA9803ACC0B32DF45BBC /* Pods */,
 				D9F14459A765673AF2861B70 /* Frameworks */,
@@ -330,6 +360,7 @@
 				D786BCE82798278F004619AD /* CursoiOS-Proyecto2.app */,
 				D786BCFE27982793004619AD /* CursoiOS-Proyecto2Tests.xctest */,
 				D786BD0827982793004619AD /* CursoiOS-Proyecto2UITests.xctest */,
+				4557416527A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,7 +387,9 @@
 			isa = PBXGroup;
 			children = (
 				D786BD0227982793004619AD /* CursoiOS_Proyecto2Tests.swift */,
+				4557415F27A30F1C002AB4E6 /* CatsListInteractorTests.swift */,
 				D786BD2527982AD6004619AD /* FetchLandmarksFromDiskTests.swift */,
+				4557416E27A31865002AB4E6 /* CatsProviderTests.swift */,
 			);
 			path = "CursoiOS-Proyecto2Tests";
 			sourceTree = "<group>";
@@ -424,6 +457,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4557416427A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4557416B27A3181B002AB4E6 /* Build configuration list for PBXNativeTarget "CursoiOS-Proyecto2IntegrationTests" */;
+			buildPhases = (
+				4557416127A3181B002AB4E6 /* Sources */,
+				4557416227A3181B002AB4E6 /* Frameworks */,
+				4557416327A3181B002AB4E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4557416A27A3181B002AB4E6 /* PBXTargetDependency */,
+			);
+			name = "CursoiOS-Proyecto2IntegrationTests";
+			productName = "CursoiOS-Proyecto2IntegrationTests";
+			productReference = 4557416527A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D786BCE72798278F004619AD /* CursoiOS-Proyecto2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D786BD1227982793004619AD /* Build configuration list for PBXNativeTarget "CursoiOS-Proyecto2" */;
@@ -489,9 +540,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					4557416427A3181B002AB4E6 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = D786BCE72798278F004619AD;
+					};
 					D786BCE72798278F004619AD = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -522,11 +577,19 @@
 				D786BCE72798278F004619AD /* CursoiOS-Proyecto2 */,
 				D786BCFD27982793004619AD /* CursoiOS-Proyecto2Tests */,
 				D786BD0727982793004619AD /* CursoiOS-Proyecto2UITests */,
+				4557416427A3181B002AB4E6 /* CursoiOS-Proyecto2IntegrationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4557416327A3181B002AB4E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D786BCE62798278F004619AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,6 +726,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4557416127A3181B002AB4E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4557416827A3181B002AB4E6 /* CursoiOS_Proyecto2IntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D786BCE42798278F004619AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,7 +781,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D786BD0327982793004619AD /* CursoiOS_Proyecto2Tests.swift in Sources */,
+				4557416027A30F1C002AB4E6 /* CatsListInteractorTests.swift in Sources */,
 				D786BD2627982AD6004619AD /* FetchLandmarksFromDiskTests.swift in Sources */,
+				4557416F27A31865002AB4E6 /* CatsProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +799,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4557416A27A3181B002AB4E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D786BCE72798278F004619AD /* CursoiOS-Proyecto2 */;
+			targetProxy = 4557416927A3181B002AB4E6 /* PBXContainerItemProxy */;
+		};
 		D786BD0027982793004619AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D786BCE72798278F004619AD /* CursoiOS-Proyecto2 */;
@@ -759,6 +837,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4557416C27A3181B002AB4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YW82H8FU3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eliadotor.CursoiOS-Proyecto2IntegrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CursoiOS-Proyecto2.app/CursoiOS-Proyecto2";
+			};
+			name = Debug;
+		};
+		4557416D27A3181B002AB4E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YW82H8FU3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eliadotor.CursoiOS-Proyecto2IntegrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CursoiOS-Proyecto2.app/CursoiOS-Proyecto2";
+			};
+			name = Release;
+		};
 		D786BD1027982793004619AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1038,6 +1154,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4557416B27A3181B002AB4E6 /* Build configuration list for PBXNativeTarget "CursoiOS-Proyecto2IntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4557416C27A3181B002AB4E6 /* Debug */,
+				4557416D27A3181B002AB4E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D786BCE32798278F004619AD /* Build configuration list for PBXProject "CursoiOS-Proyecto2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
