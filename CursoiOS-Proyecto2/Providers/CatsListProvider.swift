@@ -19,15 +19,14 @@ protocol CatsListProviderContract {
 class NetworkCatsListProvider: CatsListProviderContract {
     //var cats = [Cat]()
     private let session: Session
+    private let bundle: Bundle
     
-    init(session: Session = .default) {
+    init(session: Session = .default, bundle: Bundle = .main) {
         self.session = session
+        self.bundle = bundle
     }
     func getCatsList(_ completion: @escaping (Result<[Cat], CatsListProviderError>) -> ()) {
-        guard let url = URL(string: "https://cataas.com/api/cats") else {
-            completion(.failure(.badUrl))
-            return
-        }
+        let url = bundle.baseAPIUrl.appendingPathComponent("api/cats")
         
         let request = URLRequest(url: url)
         //AF.request(request).responseDecodable { [weak self](response: DataResponse<[Cat], AFError>) in

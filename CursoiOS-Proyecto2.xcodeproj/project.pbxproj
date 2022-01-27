@@ -22,6 +22,7 @@
 		4557415827A2EF48002AB4E6 /* PermissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415727A2EF48002AB4E6 /* PermissionsPresenter.swift */; };
 		4557415A27A2F536002AB4E6 /* LocationPermissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415927A2F536002AB4E6 /* LocationPermissionInteractor.swift */; };
 		4557415C27A2F912002AB4E6 /* PermissionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415B27A2F912002AB4E6 /* PermissionBuilder.swift */; };
+		4557415E27A30389002AB4E6 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4557415D27A30389002AB4E6 /* BundleExtensions.swift */; };
 		456B449F27986440004A15B5 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456B449E27986440004A15B5 /* ListViewController.storyboard */; };
 		456B44A1279864CD004A15B5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44A0279864CD004A15B5 /* ListViewController.swift */; };
 		456B44A327986A24004A15B5 /* ListControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B44A227986A24004A15B5 /* ListControllerBuilder.swift */; };
@@ -94,6 +95,7 @@
 		4557415727A2EF48002AB4E6 /* PermissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPresenter.swift; sourceTree = "<group>"; };
 		4557415927A2F536002AB4E6 /* LocationPermissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionInteractor.swift; sourceTree = "<group>"; };
 		4557415B27A2F912002AB4E6 /* PermissionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionBuilder.swift; sourceTree = "<group>"; };
+		4557415D27A30389002AB4E6 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		456B449E27986440004A15B5 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
 		456B44A0279864CD004A15B5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		456B44A227986A24004A15B5 /* ListControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListControllerBuilder.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				4532A8A427A1C85000FEFC33 /* StringExtensions.swift */,
 				4532A8A627A1C90B00FEFC33 /* UIViewControllerExtensions.swift */,
+				4557415D27A30389002AB4E6 /* BundleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				D786BCEE2798278F004619AD /* SceneDelegate.swift in Sources */,
 				D786BD2127982A45004619AD /* FetchLandmarksUseCase.swift in Sources */,
 				4557415C27A2F912002AB4E6 /* PermissionBuilder.swift in Sources */,
+				4557415E27A30389002AB4E6 /* BundleExtensions.swift in Sources */,
 				D786BD2427982A72004619AD /* Landmark.swift in Sources */,
 				4532A8A527A1C85000FEFC33 /* StringExtensions.swift in Sources */,
 				456B44A9279874DD004A15B5 /* DetailViewController.swift in Sources */,
@@ -877,6 +881,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5190E534D46FCB9CC146CE14 /* Pods-CursoiOS-Proyecto2.debug.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "https://cataas.com/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -905,6 +910,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 314E908CB691053B58AB263C /* Pods-CursoiOS-Proyecto2.release.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "https://cataas.com/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
